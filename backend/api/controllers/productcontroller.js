@@ -1,3 +1,19 @@
+// CONTROLLERS FOR ORDERS
+
+// -------------------------------------------------------
+// Create
+const addProduct = (req, res)=>{
+  try{
+    res.status(201).json({status: 'To POST to /products'});
+  }catch(err){
+    res.status(500).json({status: err.message});
+  }
+}
+
+// -------------------------------------------------------
+// Read
+
+// 1. All Products
 const getProducts = (req, res)=>{
   try{
     res.status(201).json({status: '/products'});
@@ -6,6 +22,7 @@ const getProducts = (req, res)=>{
   }
 }
 
+// 2. Product{id}
 const getProduct = (req, res)=>{
   try{
     const id = req.params.id;
@@ -15,14 +32,8 @@ const getProduct = (req, res)=>{
   }
 }
 
-const addProduct = (req, res)=>{
-  try{
-    res.status(201).json({status: 'To POST to /products'});
-  }catch(err){
-    res.status(500).json({status: err.message});
-  }
-}
-
+// -------------------------------------------------------
+// Update{id}
 const updateProduct = (req, res)=>{
   try{
     res.status(201).json({status: 'to PATCH/PUT to /products/:id'});
@@ -31,6 +42,8 @@ const updateProduct = (req, res)=>{
   }
 }
 
+// -------------------------------------------------------
+// Delete{id}
 const deleteProduct = (req, res)=>{
   try{
     res.status(201).json({status: 'To DELETE from /products/:id'});

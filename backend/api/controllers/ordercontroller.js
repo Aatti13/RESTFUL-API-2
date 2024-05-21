@@ -1,3 +1,19 @@
+// CONTROLLERS FOR ORDERS
+
+// -------------------------------------------------------
+// Create
+const addOrder = (req, res)=>{
+  try{
+    res.status(201).json({status: "Order Added"});
+  }catch(err){
+    res.status(500).json({status: err.message});
+  }
+}
+
+// -------------------------------------------------------
+// Read
+
+// 1. All Orders
 const getOrders = (req, res)=>{
   try{
     res.status(201).json({status: "All orders fetched"});
@@ -6,6 +22,7 @@ const getOrders = (req, res)=>{
   }
 }
 
+// 2. Order{id}
 const getOrder = (req, res)=>{
   try{
     const id = req.params.id;
@@ -17,14 +34,8 @@ const getOrder = (req, res)=>{
   }
 }
 
-const addOrder = (req, res)=>{
-  try{
-    res.status(201).json({status: "Order Added"});
-  }catch(err){
-    res.status(500).json({status: err.message});
-  }
-}
-
+// -------------------------------------------------------
+// Update{id}
 const updateOrder = (req, res)=>{
   try{
     const id = req.params.id;
@@ -36,6 +47,8 @@ const updateOrder = (req, res)=>{
   }
 }
 
+// -------------------------------------------------------
+// Delete{id}
 const deleteOrder = (req, res)=>{
   try{
     const id = req.params.id;
