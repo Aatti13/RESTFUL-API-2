@@ -4,7 +4,11 @@
 // Create
 const addProduct = (req, res)=>{
   try{
-    res.status(201).json({status: 'To POST to /products'});
+    const product = {
+      name: req.body.name,
+      price: req.body.price,
+    }
+    res.status(201).json({status: 'To POST to /products', createdProduct: product});
   }catch(err){
     res.status(500).json({status: err.message});
   }
